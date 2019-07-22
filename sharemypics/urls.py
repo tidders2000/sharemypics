@@ -16,11 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
+from cuspic import urls as urls_cuspic
 from accounts.views import index
+from cuspic.views import allPics
+from django.views import static
+from .settings import MEDIA_ROOT
+
 urlpatterns = [
     
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^$', index, name='index'),
-    
+     url(r'^cuspic/', include(urls_cuspic)),
 ]
