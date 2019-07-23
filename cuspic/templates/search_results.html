@@ -1,0 +1,10 @@
+<!-- templates/search_results.html -->
+<h1>Search Results</h1>
+
+<ul>
+  {% for pic in pics %}
+    <li>
+      {{ pic.event_name }}
+    </li>
+  {% endfor %}
+</ul>
