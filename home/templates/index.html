@@ -4,6 +4,12 @@
     <h1>HomePage</h1>
 
 <form action="{% url 'search_results' %}" method="get">
-  <input name="q" type="text" placeholder="Search...">
-</form>
+ 
+ <input type = "text" list = "events" name="q"> 
+      <datalist id = "events">
+         {% for event in events %}
+         <option  value="{{ event.event_name }}">
+         {% endfor %}
+      </datalist>
+      <input type = "submit" value = "confirm">
 {% endblock %}
