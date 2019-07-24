@@ -1,15 +1,34 @@
-{% extends 'base.html' %}
-{% block content %}
-  
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+     <link rel="stylesheet" href="static/css/custom.css">
+    <title>SHARE MY PICS</title>
+</head>
+<body>
+    <div class="container-fluid"
+     <div class="row">
+        <div class="col-sm-12 nav">
+            
+        </div>
+    </div>
+    
     <h1>HomePage</h1>
 
 <form action="{% url 'search_results' %}" method="get">
  
- <input type = "text" list = "events" name="q"> 
+ <input type = "text" list = "events" name="q"/> 
       <datalist id = "events">
          {% for event in events %}
          <option  value="{{ event.event_name }}">
          {% endfor %}
       </datalist>
-      <input type = "submit" value = "confirm">
-{% endblock %}
+      <input type = "submit" value = "confirm"/>
+
+</body>
+</html>
+  
+    
