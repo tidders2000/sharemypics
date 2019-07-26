@@ -35,11 +35,11 @@
     <!-- hero image-->
     <div class="row">
       <img src="{{ STATIC_URL }}images/83.jpg" class="img-fluid hero" alt="Responsive image">
-      <div class="centered">SHARE MY PICS</div>
+      <div class="centered awesome">SHARE MY PICS</div>
     </div>
     <!-- three main content blocks-->
     <div class="row whitebg">
-      <div class="col-md-4">
+      <div class="col-md-4 blk-1">
         <h1>Attended an event?</h1>
         <ol>
           <li>Search for the event you were at</li>
@@ -47,7 +47,7 @@
           <li>Download a memory</li>
         </ol>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 blk-2">
         <h1>Find An Event</h1><br>
         <form action="{% url 'search_results' %}" method="get">
 
@@ -57,10 +57,10 @@
          <option  value="{{ event.event_name }}">
          {% endfor %}
       </datalist><br>
-          <input type="submit" value="Go" />
+          <input type="submit" value="Go" class="btn btn-success btn-lg go" />
         </form>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 blk-3">
         <h1>Took some great pics</h1>
         <p>Find out how to sell your pictures and make instant cash</p>
       </div>
@@ -120,7 +120,7 @@
           <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
       
          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-red my-0" type="button">Sign up</button>
+            <button class="btn btn-sm btn-secondary my-0" type="button">Sign up</button>
           </div>
         </form>
 
