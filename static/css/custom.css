@@ -46,7 +46,7 @@ footer {
 .centered {
   position: absolute;
   top: 30%;
-left: 55%;
+  left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
   color:white;
@@ -65,10 +65,8 @@ left: 55%;
     font-size: 30px;
 
 }
-.blk2{
-    display:block;
-    margin:auto;
-    text-align:center;
+.blk2 h1{
+text-align:center;
 }
 
 .blk3{
