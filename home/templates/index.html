@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-     <link rel="stylesheet" href="{{STATIC_URL}}css/custom.css">
-    <title>SHARE MY PICS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="{{STATIC_URL}}css/custom.css">
+  <title>SHARE MY PICS</title>
 </head>
+
 <body>
-    <div class="container-fluid">
-   <div class="row nav-holder">
-       <div class="col-12"></div>
-            <ul class="nav ">
- 
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
+  <div class="container-fluid">
+    <!-- navigation-->
+    <div class="row nav-holder">
+      <div class="col-12"></div>
+      <ul class="nav ">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+
+      </ul>
+
     </div>
-  </li>
-  
-</ul>
-     
- </div>  
- <div class="row">
-     <img src="{{ STATIC_URL }}images/83.jpg" class="img-fluid hero" alt="Responsive image">
-      <div class="centered">Centered</div>
- </div>
-<div class="row whitebg">
-    <div class="col-md-4">
+    <!-- hero image-->
+    <div class="row">
+      <img src="{{ STATIC_URL }}images/83.jpg" class="img-fluid hero" alt="Responsive image">
+      <div class="centered">SHARE MY PICS</div>
+    </div>
+    <!-- three main content blocks-->
+    <div class="row whitebg">
+      <div class="col-md-4">
         <h1>Attended an event?</h1>
         <ol>
-            <li>Search for the event you were at</li>
-            <li>Browse fans pictures</li>
-            <li>Download a memory</li>
+          <li>Search for the event you were at</li>
+          <li>Browse fans pictures</li>
+          <li>Download a memory</li>
         </ol>
-    </div>
+      </div>
       <div class="col-md-4">
-          <h1>Find An Event</h1><br>
-          <form action="{% url 'search_results' %}" method="get">
- 
- <input type = "text" list = "events" name="q"/> 
-      <datalist id = "events">
+        <h1>Find An Event</h1><br>
+        <form action="{% url 'search_results' %}" method="get">
+
+          <input type="text" list="events" name="q" />
+          <datalist id="events">
          {% for event in events %}
          <option  value="{{ event.event_name }}">
          {% endfor %}
       </datalist><br>
-      <input type = "submit" value = "Go"/>
-</form>
+          <input type="submit" value="Go" />
+        </form>
       </div>
-        <div class="col-md-4">
-            <h1>Took some great pics</h1>
-            <p>Find out how to sell your pictures and make instant cash</p>
-        </div>
-</div>
+      <div class="col-md-4">
+        <h1>Took some great pics</h1>
+        <p>Find out how to sell your pictures and make instant cash</p>
+      </div>
+    </div>
 
-<footer>
-    <div class="col-md-12 py-5">
-        <div class="mb-5 flex-center">
+  <!--footer-->
+ <div class="container-flex footer">
+  
+   
+        <div class="social">
 
           <!-- Facebook -->
           <a class="fb-ic">
@@ -90,24 +97,15 @@
             <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
           </a>
         </div>
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
-    <!-- Footer Elements -->
-  <div class="container">
-
-    <!--Grid row-->
-    <div class="row">
+    
+     <div class="row">
 
       <!--Grid column-->
       <div class="col-md-6 mb-4">
 
         <!-- Form -->
         <form class="form-inline">
-          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
+          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
           <i class="fas fa-search" aria-hidden="true"></i>
         </form>
         <!-- Form -->
@@ -119,10 +117,10 @@
       <div class="col-md-6 mb-4">
 
         <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
-            aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
+          <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+      
+         <div class="input-group-append">
+            <button class="btn btn-sm btn-outline-red my-0" type="button">Sign up</button>
           </div>
         </form>
 
@@ -136,19 +134,26 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://scruffyhorse.com"> scruffyhorse.com</a>
   </div>
   <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
-</footer>
+   
+   
+  <!-- Footer -->
+ </div>
+     
+   </div>
+   
+ </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6cdfe06436.js"></script>
 </body>
+
 </html>
-  
-    
