@@ -9,13 +9,13 @@
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 ">
             <div class='card'>
                 <div class="card-header">
-               {{ pic.event_name }}
+               {{ pic.event_name }}- {{pic.username}}
                 </div>
-                <img src="{{ MEDIA_URL }}{{ pic.image }}" class="card-img-top" alt="...">
+                <a  href="{{ MEDIA_URL }}{{ pic.image }}" data-rel="lightcase"> <img src="{{ MEDIA_URL }}{{ pic.image }}" class="card-img-top" alt="..."></a>
 
             
                 <p class="product-description">{{ pic.info }}</p>
-                <p><a href="{{STATIC_URL}}images/83.jpg" data-rel="lightcase">Your link description or thumb</a></p>
+                
                 <p>{{ pic.price }}</p>
 
                 <form method="post" action="">

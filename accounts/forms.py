@@ -3,11 +3,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+
 class UserLoginForm(forms.Form):
     """form tobe used to login users"""
     username=forms.CharField()
     password=forms.CharField(widget=forms.PasswordInput)
-    
+
+   
     
 class UserRegistrationForm(UserCreationForm):
     """form to register users"""

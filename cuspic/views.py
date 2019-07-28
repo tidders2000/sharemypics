@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
+from django.contrib.auth.models import User
 from .models import CusPic
+
 
 def allPics(request):
     allpics = CusPic.objects.all()
