@@ -178,6 +178,11 @@ i{
     color: pink;
   }
 }
+/*.........................................search results......................*/
+.search-title{
+  color:#A9A9A9;
+}
+
 
 .pic{
   background-size: contain;
@@ -186,4 +191,24 @@ i{
     width: 150px;
     height: 150px;
     margin: 0 auto;
+}
+
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card{
+    border-color: transparent;
+    padding: 0 10px;
+}
+
+.card-body {
+    height: 100%;
+    border: 1px solid #ddd;
+}
+
+.product-description {
+    min-height: 40px;
 }

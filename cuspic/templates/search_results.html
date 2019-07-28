@@ -1,19 +1,24 @@
-{% extends 'base.html' %}
- {% block content %}
- <div class="container-flex whitebg">
-<h1>Search Results</h1>
+{% extends 'base.html' %} {% block content %}
 
-<div class="row row-flex">
-    {% for pic in pics %}
-      <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-          <div class ='panel-body'>
-             
-              <div class='pic'  style="background-image: url('{{ MEDIA_URL }}{{ pic.image }}')"></div>
-              <h3>{{ pic.event_name }}</h3>
-                <p class="product-description">{{ pic.info }}</p>
-                <p>{{ pic.price }}</p>
+
+<div class="container-flex">
+    <h1 class='search-title'>Search Results</h1>
+
+    <div class="row row-flex">
+        {% for pic in pics %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 ">
+            <div class='card'>
+                <div class="card-header">
+               {{ pic.event_name }}
+                </div>
+                <img src="{{ MEDIA_URL }}{{ pic.image }}" class="card-img-top" alt="...">
+
             
-            <form method="post" action="">
+                <p class="product-description">{{ pic.info }}</p>
+                <p><a href="{{STATIC_URL}}images/83.jpg" data-rel="lightcase">Your link description or thumb</a></p>
+                <p>{{ pic.price }}</p>
+
+                <form method="post" action="">
                     {% csrf_token %}
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
@@ -25,10 +30,10 @@
 
             </div>
         </div>
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
 
 
 
 </div>
- {% endblock %}
+{% endblock %}
