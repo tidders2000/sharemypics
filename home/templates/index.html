@@ -19,10 +19,11 @@
         <h1>Find An Event</h1><br>
         <form action="{% url 'search_results' %}" method="get">
 
-          <input type="text" list="events" name="q" />
-          <datalist id="events">
+          <input type="text" list="list" name="q"/>
+          <datalist id="list">
          {% for event in events %}
          <option  value="{{ event.event_name }}">
+           
          {% endfor %}
       </datalist><br>
           <input type="submit" value="Go" class="btn btn-success btn-lg go" />
@@ -31,6 +32,7 @@
       <div class="col-md-4 blk-3">
         <h1>Took some great pics</h1>
         <p>Find out how to sell your pictures and make instant cash</p>
+       
       </div>
     </div>
 
