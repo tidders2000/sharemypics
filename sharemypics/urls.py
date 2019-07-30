@@ -22,6 +22,7 @@ from home.views import index
 from cuspic.views import allPics
 from django.views import static
 from .settings import MEDIA_ROOT
+from cart import urls as urls_cart
 
 urlpatterns = [
     
@@ -30,5 +31,6 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^cuspic/', include(urls_cuspic)),
     url(r'^home/', include(urls_home)),
+    url(r'^cart/', include(urls_cart)),
         url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]

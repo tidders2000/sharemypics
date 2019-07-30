@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cuspic',
     'home',
     'watermarker',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
+                'cart.contexts.cart_contents',
             ],
         },
     },
