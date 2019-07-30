@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'cuspic',
     'home',
+    'watermarker',
 ]
 
 MIDDLEWARE = [

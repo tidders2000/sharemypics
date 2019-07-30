@@ -9,6 +9,7 @@ def allPics(request):
     return render(request, 'allpics.html',{"allpics":allpics})
 
 def SearchResultsView(request):
+    
     query = request.GET.get('q')
     pics = CusPic.objects.filter(event_name__icontains=query)
     return render(request, 'search_results.html',{"pics":pics})

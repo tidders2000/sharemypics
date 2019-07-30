@@ -365,8 +365,11 @@ html[data-lc-type=image] #lightcase-content .lightcase-contentInner {
 /* line 9, ../scss/components/modules/_info.scss */
 #lightcase-info #lightcase-title,
 #lightcase-info #lightcase-caption {
+
   margin: 0;
+ 
   padding: 0;
+ 
   line-height: 1.5;
   font-weight: normal;
   text-overflow: ellipsis;
@@ -390,7 +393,7 @@ html[data-lc-type=image] #lightcase-content .lightcase-contentInner {
 /* line 33, ../scss/components/modules/_info.scss */
 #lightcase-info #lightcase-caption {
   clear: both;
-  font-size: 13px;
+  font-size: 50px;
   color: #aaa;
 }
 /* line 39, ../scss/components/modules/_info.scss */
