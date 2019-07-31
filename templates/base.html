@@ -17,8 +17,17 @@
   <div class="container-fluid">
     <!-- navigation-->
     <div class="row nav-holder">
-      <div class="col-12"></div>
+      <div class="col-12">
+       
       <ul class="nav ">
+         <li class="nav-item">
+                        <a href="{% url 'view_cart' %}" class='item'>
+                            <i class="fa fa-shipping-cart"></i> Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
@@ -32,7 +41,7 @@
         </li>
 
       </ul>
-
+</div>
     </div>
       {% block content %}{% endblock %}
         <!--footer-->

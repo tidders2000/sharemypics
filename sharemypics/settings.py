@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home',
     'watermarker',
     'cart',
+    'search',
 ]
 
 MIDDLEWARE = [
