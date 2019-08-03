@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--bootstrap,fontawsome,lightcase(lightbox plug) and custom css-->
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="{{STATIC_URL}}css/custom.css">
@@ -17,11 +19,11 @@
   <div class="container-fluid">
     <!-- navigation-->
     <div class="row nav-holder">
-      <div class="col-md-2">
+      <div class="col-md-2"> <!--shoping basket-->
         <ul class='navbar'>
           <li class="nav-item">
             <a href="{% url 'view_cart' %}" class="nav-link">
-<i class="fas fa-shopping-basket"></i>Cart
+              <i class="fas fa-shopping-basket"></i>Cart
                             {% if product_count >= 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -29,10 +31,10 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10"><!--main nav-->
 
         <ul class="nav ">
-
+        <!--bootsrap classes and dropdown template-->
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
