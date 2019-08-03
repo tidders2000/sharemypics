@@ -1,3 +1,5 @@
+/* .................general styling................ */
+
 body {
     font-family: Arial;
     padding:0;
@@ -11,13 +13,7 @@ body {
     padding:0;
 }
 
-footer {
-    margin-top: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
-}
+
 
 .icon-bar {
     background-color: #fff;
@@ -53,56 +49,7 @@ footer {
   font-size: 150px;
 }
 
-/*.........................................3 sub sections......................*/
-.whitebg{
-    margin-top: 50px;
-    background-color:white;
-    min-height: 300px;
-    padding-top: 30px;
-}
-
-.blk-1{
-    font-size: 30px;
-
-}
-.blk2 h1{
-text-align:center;
-}
-
-.blk3{
-    font-size:30px;
-}
-
-.go{
-    margin-top:10px;
-}
-
-/*.........................................footer......................*/
-
-.social {
-    display: block;
-     margin: auto;
-  width: 50%;
-  text-align:center;
-  padding-bottom: 50px;
-  color:#A9A9A9;
-}
-.footer-copyright{
-    color:#A9A9A9;
-}
-
-hr{
-    color: #A9A9A9;
-}
-
-.footer{
-    padding-top:50px;
-}
-
-i{
-    color:#A9A9A9;
-}
-
+/* not my code */
 
 .awesome {
 
@@ -178,6 +125,59 @@ i{
     color: pink;
   }
 }
+
+/*.........................................3 sub sections......................*/
+.whitebg{
+    margin-top: 50px;
+    background-color:white;
+    min-height: 300px;
+    padding-top: 30px;
+}
+
+.blk-1{
+    font-size: 30px;
+
+}
+.blk2 h1{
+text-align:center;
+}
+
+.blk3{
+    font-size:30px;
+}
+
+.go{
+    margin-top:10px;
+}
+
+/*.........................................footer......................*/
+
+.social {
+    display: block;
+     margin: auto;
+  width: 50%;
+  text-align:center;
+  padding-bottom: 50px;
+  color:#A9A9A9;
+}
+.footer-copyright{
+    color:#A9A9A9;
+}
+
+hr{
+    color: #A9A9A9;
+}
+
+.footer{
+    padding-top:50px;
+}
+
+i{
+    color:#A9A9A9;
+}
+
+
+
 /*.........................................search results......................*/
 .search-title{
   color:#A9A9A9;
@@ -205,17 +205,9 @@ i{
     min-height: 40px;
 }
 
-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
-}
 
-.icon-bar {
-    background-color: #fff;
-}
+
+
 
 .accountform {
     padding-top: 20px;
