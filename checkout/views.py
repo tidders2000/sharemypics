@@ -64,5 +64,8 @@ def checkout(request):
     return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
     
 def download_images(request):
-    purchases=OrderLineItem.objects.all()
-    return render(request, 'download_images.html', {'purchases':purchases})
+    user=request.user.username
+    purchases=  OrderLineItem.objects.all()
+    
+ 
+    return render(request, 'download_images.html', {'purchases':purchases}, {'user':user})

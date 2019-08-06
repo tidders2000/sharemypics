@@ -3,11 +3,19 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<h1>Hello/h1>
+<h1>{{user.username}}</h1>
+
+<ul>
 
 {% for purchase in purchases%}
 
-<a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a>
+{% if purchase.product.username == user.username %}
+
+<li><a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a></li>
+
+</ul>
+ {% endif %}
+
 {% endfor %}
 
 {% endblock %}
