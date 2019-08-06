@@ -22,8 +22,12 @@ body {
 .accountform {
     padding-top: 20px;
 }
+
+input{
+      border-radius: 15px
+}
 /*.........................................navigation for home page......................*/
-.nav {
+.nav2 {
     margin-left:90%;
     color:white;
     }
@@ -226,3 +230,32 @@ i{
     background-color: #c67605;
 }
 
+
+/*.........................................cart......................*/
+.input-group-addon{
+    margin-left: 20px;
+}
+
+.checkout{
+    
+    padding-bottom:20px;
+    float: right;
+    text-align:right;
+  }
+.total{
+    border-top:1px solid black;
+    border-bottom:x solid black;
+}
+/*.........................................checkout......................*/
+.form-group{
+    color:white;
+}
+
+.total{
+    color:white;
+    margin-left:20px;
+}
+
+.legend{
+    color:white;
+}

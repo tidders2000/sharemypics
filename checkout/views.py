@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -41,7 +41,7 @@ def checkout(request):
             try:
                 customer = stripe.Charge.create(
                     amount = int(total * 100),
-                    currency = "EUR",
+                    currency = "GBP",
                     description = request.user.email,
                     card = payment_form.cleaned_data['stripe_id'],
                 )
@@ -51,7 +51,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('products'))
+                return render(request,'download_images.html',{'order':order})
             else:
                 messages.error(request, "Unable to take payment")
         else:

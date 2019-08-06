@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<h1>Hello/h1>
+
+{% for o in order %}
+   <a href='{{ o.image }}'>{{ o.image }}</a> 
+
+{% endfor %}
+{% endblock %}
