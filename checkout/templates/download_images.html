@@ -9,7 +9,7 @@
 
 {% for purchase in purchases%}
 
-{% if purchase.product.username == user.username %}
+{% if purchase.buyer.username == user.username %}
 
 <li><a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a></li>
 
