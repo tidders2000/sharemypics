@@ -5,8 +5,9 @@
 {% block content %}
 <h1>Hello/h1>
 
-{% for o in order %}
-   <a href='{{ o.image }}'>{{ o.image }}</a> 
+{% for purchase in purchases%}
 
+<a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a>
 {% endfor %}
+
 {% endblock %}

@@ -51,7 +51,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return render(request,'download_images.html',{'order':order})
+                return render(request,'download_images.html',{'product':product})
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -62,3 +62,7 @@ def checkout(request):
         order_form = OrderForm()
         
     return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+    
+def download_images(request):
+    purchases=OrderLineItem.objects.all()
+    return render(request, 'download_images.html', {'purchases':purchases})
