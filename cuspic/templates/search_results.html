@@ -18,7 +18,7 @@
                 
                 <p>£{{ pic.price }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' pic.id %}"><!-- form adds picture to cart-->
+                <form method="post" action="{% url 'add_to_cart' pic.id %}" id='quantity_form'><!-- form adds picture to cart-->
                     {% csrf_token %}
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
@@ -26,11 +26,13 @@
                             <button class="btn btn-success" type="submit">Add</button>
                         </span>
                     </div>
+                    
                 </form>
 
             </div>
         </div>
         {% endfor %}
+       <div class="errortxt"></div>
     </div>
 
 
