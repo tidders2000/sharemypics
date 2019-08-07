@@ -222,7 +222,10 @@ i{
     min-height: 40px;
 }
 
-
+.errortxt{
+    color:white;
+    padding:5px;
+}
 
 
 
