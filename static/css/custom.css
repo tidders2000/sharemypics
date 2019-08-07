@@ -24,7 +24,7 @@ body {
 }
 
 input{
-      border-radius: 15px
+      border-radius: 5px
 }
 /*.........................................navigation for home page......................*/
 .nav2 {
@@ -140,14 +140,23 @@ input{
 
 .blk-1{
     font-size: 30px;
+   
 
 }
-.blk2 h1{
-text-align:center;
+.blk-2 {
+    margin: auto;
+    width:50%;
+    text-align:center;
+
 }
 
-.blk3{
+.blk-2 h1{
+    background-color:yellow;
+}
+
+.blk-3{
     font-size:30px;
+    text-align:center;
 }
 
 .go{
