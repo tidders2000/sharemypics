@@ -3,7 +3,9 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<h1>{{user.username}}</h1>
+<div class="col-sm-12 whitebg">
+<h1>Download Images</h1>
+<p>Click on the link then right click on the image and select Save As</p>
 
 <ul>
 
@@ -14,8 +16,9 @@
 <li><a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a></li>
 
 </ul>
+
  {% endif %}
 
 {% endfor %}
-
+</div>
 {% endblock %}
