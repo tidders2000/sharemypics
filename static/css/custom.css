@@ -261,6 +261,10 @@ i{
 .total{
   background-color:grey;
 }
+
+.cart_text i{
+    padding-right:3px;
+}
 /*.........................................checkout......................*/
 .form-group{
     color:white;
