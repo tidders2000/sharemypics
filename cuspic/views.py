@@ -25,16 +25,11 @@ def SearchResultsView(request):
 def add_an_image(request):
     
     if request.method=="POST":
-      image = add_image_form(request.POST)
+    
+      image = add_image_form(request.POST, request.FILES)
+      image.save()
 
-      
-      
-      if image.is_valid():
-        image.save()
-          
-         
-      else:
-            messages.error(request, 'error')
+    
     else:    
 
      image=add_image_form()
