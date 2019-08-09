@@ -6,8 +6,13 @@
 
 <h1>Upload images</h1>
 
+<form  method="post" id="add_image" action="">
  <div class="form-group col-md-6">
         {{ add_image | as_bootstrap }}
     </div>
-
+  {% csrf_token %}   
+<div class="form-group col-md-12">
+        <input class=" btn btn-primary" id="submit_image_btn" name="commit" type="submit" value="submit_image">
+    </div>
+</form>
 {% endblock %}

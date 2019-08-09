@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, ListView
+from django.conf import settings
 from django.contrib.auth.models import User
 from .models import CusPic
 from .forms import add_image_form
@@ -21,7 +24,20 @@ def SearchResultsView(request):
 
 def add_an_image(request):
     
-    add_image=add_image_form()
+    if request.method=="POST":
+      image = add_image_form(request.POST)
+
+      
+      
+      if image.is_valid():
+        image.save()
+          
+         
+      else:
+            messages.error(request, 'error')
+    else:    
+
+     image=add_image_form()
   
 
-    return render(request, 'add_image.html', {'add_image':add_image})
+    return render(request, 'add_image.html', {'add_image':image},)
