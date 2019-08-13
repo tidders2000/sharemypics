@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib import auth
 from django.views.generic import TemplateView, ListView
 from django.conf import settings
-from django.contrib.auth.models import User
+
 from .models import CusPic
 from .forms import add_image_form
 
@@ -23,16 +23,24 @@ def SearchResultsView(request):
 """ a view that allows users to add images to the db"""
 
 def add_an_image(request):
-    
+    user=request.user
+  
+  
+  
     if request.method=="POST":
-    
+      
       image = add_image_form(request.POST, request.FILES)
-      image.save()
+      if image.is_valid():
+          img=image
+          
+          img.user=user
+         
+          img.save()
 
     
     else:    
 
      image=add_image_form()
-  
+     
 
-    return render(request, 'add_image.html', {'add_image':image},)
+    return render(request, 'add_image.html', {'add_image':image},{'user':user})
