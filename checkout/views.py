@@ -70,3 +70,7 @@ def download_images(request):
     
  
     return render(request, 'download_images.html', {'purchases':purchases}, {'user':user})
+
+def sales(request):
+    sales = OrderLineItem.objects.all()
+    return render(request,'sales.html',{'sales':sales})

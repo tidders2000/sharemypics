@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<h1>SALES</h1>
+
+<ul>
+
+{% for sale in sales %}
+ {% if sale.product.user.username == user.username %}
+<li> {{sale.order}} {{sale.product.price}} {{sale.product.user}}</li>
+{% endif %}
+{% endfor %}
+
+</ul>
+{% endblock %}
