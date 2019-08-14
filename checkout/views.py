@@ -63,14 +63,14 @@ def checkout(request):
         order_form = OrderForm()
         
     return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
-    
+@login_required()   
 def download_images(request):
     user=request.user.username
     purchases=  OrderLineItem.objects.all()
     
  
     return render(request, 'download_images.html', {'purchases':purchases}, {'user':user})
-
+@login_required()
 def sales(request):
     sales = OrderLineItem.objects.all()
     return render(request,'sales.html',{'sales':sales})

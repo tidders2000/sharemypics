@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, ListView
 from django.conf import settings
 
@@ -21,7 +22,7 @@ def SearchResultsView(request):
     return render(request, 'search_results.html',{"pics":pics})
 
 """ a view that allows users to add images to the db"""
-
+@login_required()
 def add_an_image(request):
     user=request.user
   
