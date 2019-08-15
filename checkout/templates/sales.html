@@ -1,20 +1,25 @@
-{% extends "base.html" %}
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-
-{% block content %}
+{% extends "base.html" %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <h1 class='search-title'>Sales</h1>
-<div class="col-sm-12 whitebg">
 
 
-<ul>
 
-{% for sale in sales %}
- {% if sale.product.user.username == user.username %}
-<li> {{sale.order}} {{sale.product.price}} {{sale.product.user}}</li>
-{% endif %}
-{% endfor %}
+    <ul>
+        <table>
+            {% for sale in sales %} {% if sale.product.user.username == user.username %}
+            <tr>
+                <td>{{sale.product.event_name}}</td>
+                <td>{{sale.order}}</td>
+                <td>{{sale.product.price}}</td>
+                <td>{{sale.product.user}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+            <tr>
+                <td><b>Total</b></td>
+                <td></td>
+                <td><b>{{total}} </b></td>
+                <td></td>
+            </tr>
+        </table>
+        
 
-</ul>
-</div>
 {% endblock %}

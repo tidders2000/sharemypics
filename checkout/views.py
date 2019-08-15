@@ -8,6 +8,7 @@ from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
 from cuspic.models import CusPic
+from django.contrib.auth.models import User
 import stripe
 
 
@@ -73,4 +74,12 @@ def download_images(request):
 @login_required()
 def sales(request):
     sales = OrderLineItem.objects.all()
-    return render(request,'sales.html',{'sales':sales})
+    total=0
+    for sale in sales:
+        if sale.product.user == request.user:
+           total=total+sale.product.price
+       
+        
+        
+    
+    return render(request,'sales.html',{'sales':sales}, {'total':total})
