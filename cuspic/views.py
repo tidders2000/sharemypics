@@ -25,23 +25,25 @@ def SearchResultsView(request):
 @login_required()
 def add_an_image(request):
     user=request.user
-  
+    events = CusPic.objects.values('event_name').distinct()
   
   
     if request.method=="POST":
       
       image = add_image_form(request.POST, request.FILES)
+      event= request.POST.get('q')
       if image.is_valid():
-          img=image
+          img=image.save(commit=False)
           
           img.user=user
-         
+          img.event_name=event
           img.save()
-
+          messages.error(request,event)
+          messages.error(request, "saved")
     
     else:    
 
      image=add_image_form()
      
 
-    return render(request, 'add_image.html', {'add_image':image},{'user':user})
+    return render(request, 'add_image.html', {'add_image':image, 'events':events},{'user':user})

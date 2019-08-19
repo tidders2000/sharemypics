@@ -8,6 +8,13 @@
 
 <form  method="POST" id="add_image" action="" enctype="multipart/form-data">
  <div class="form-group col-md-6">
+     <input type="text" list="list" name="q"/>
+          <datalist id="list">
+         {% for event in events %}
+         <option  value="{{ event.event_name }}">
+           
+         {% endfor %}
+      </datalist><br>
         {{ add_image | as_bootstrap }}
     </div>
   {% csrf_token %}   

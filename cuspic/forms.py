@@ -4,4 +4,4 @@ from .models import CusPic
 class add_image_form(forms.ModelForm):
     class Meta:
          model = CusPic
-         fields = ('event_name', 'image', 'price', 'info')
+         fields = ('image', 'price', 'info')

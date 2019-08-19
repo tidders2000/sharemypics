@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% block content %}
+
+<h1>my images</h1>
+
+
+<table>
+    {% for img in my_img %}
+    <tr>
+        <td>{{img.event_name}}</td>
+         <td>{{img.user}}</td>
+         <td>{{img.price}}</td>
+        
+        
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
