@@ -47,3 +47,10 @@ def add_an_image(request):
      
 
     return render(request, 'add_image.html', {'add_image':image, 'events':events},{'user':user})
+    
+@login_required()
+def my_images(request):
+    
+    my_img=CusPic.objects.filter(user=request.user)
+    
+    return render(request,'my_images.html', {'my_img':my_img})
