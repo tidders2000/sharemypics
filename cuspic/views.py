@@ -4,15 +4,34 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, ListView
 from django.conf import settings
-
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+import os
 from .models import CusPic
 from .forms import add_image_form
 
 
 """ a view that returns all pictures in the db """
+
+def watermark_text(input_image_path,output_image_path,text, pos):
+        photo = Image.open(input_image_path)
+ 
+        # make the image editable
+        drawing = ImageDraw.Draw(photo)
+ 
+        black = (189, 8, 12)
+        font_type = ImageFont.truetype("cuspic/arial.ttf", 30)
+        drawing.text(pos, text, fill=black, font=font_type)
+        photo.show()
+        photo.save(output_image_path)
+
 def allPics(request):
-    allpics = CusPic.objects.all()
-    return render(request, 'allpics.html',{"allpics":allpics})
+    
+        
+        img = 'static/images/83.jpg'
+        watermark_text(img, 'static/images/test5.jpg',text='www.mousevspython.com',pos=(1200, 1000))
+        return render(request, 'allpics.html')
     
 """ a view that returns pictures filtered by event"""
 def SearchResultsView(request):
