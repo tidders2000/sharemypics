@@ -16,7 +16,7 @@ from .forms import add_image_form
 
 def watermark_text(input_image_path,output_image_path,text, pos):
         photo = Image.open(input_image_path)
- 
+        photo.thumbnail((400, 400))
         # make the image editable
         drawing = ImageDraw.Draw(photo)
  
@@ -30,7 +30,7 @@ def allPics(request):
     
         
         img = 'static/images/83.jpg'
-        watermark_text(img, 'static/images/test5.jpg',text='www.mousevspython.com',pos=(1200, 1000))
+        watermark_text(img, 'static/images/test7.jpg',text='www.sharemypics.com',pos=(0, 0))
         return render(request, 'allpics.html')
     
 """ a view that returns pictures filtered by event"""
