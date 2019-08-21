@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 
 <div class="container-flex">
@@ -11,7 +13,7 @@
                 <div class="card-header">
                {{ pic.event_name }}- {{pic.username}}
                 </div>
-                <a  href="{{ MEDIA_URL }}{{ pic.image }}" data-rel="lightcase" class='bob' data-lc-caption="Your caption" > <img src="{{ MEDIA_URL }}{{ pic.image }}" class="card-img-top " alt="..."/></a>
+                <a  href="{{MEDIA_URL}}{{ pic.wm_image }}" data-rel="lightcase" class='bob' data-lc-caption="Your caption" > <img src="{{MEDIA_URL}}{{ pic.wm_image }}" class="card-img-top " alt="..."/></a>
                 
             
                 <p class="product-description">{{ pic.info }}</p>

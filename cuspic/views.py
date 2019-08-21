@@ -20,7 +20,7 @@ def watermark_text(input_image_path,output_image_path,text, pos):
         # make the image editable
         drawing = ImageDraw.Draw(photo)
         black = (189, 8, 12)
-        font_type = ImageFont.truetype("cuspic/arial.ttf", 30)
+        font_type = ImageFont.truetype("cuspic/arial.ttf", 20)
         drawing.text(pos, text, fill=black, font=font_type)
         photo.show()
         photo.save(output_image_path)
@@ -30,7 +30,7 @@ def allPics(request):
     
         
         img = 'static/images/83.jpg'
-        watermark_text(img,'media/watermarks/img',text='www.sharemypics.com',pos=(0, 0))
+        watermark_text(img,'media/watermarks/img',text='www.sharemypics.com',pos=(200, 50))
         return render(request, 'allpics.html')
     
 """ a view that returns pictures filtered by event"""
