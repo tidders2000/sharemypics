@@ -171,18 +171,32 @@ th, td {
 
 .blk-1{
     font-size: 30px;
-   
+
 
 }
-.blk-2 {
+
+.blk-1 ol {
+    display:block;
     margin: auto;
     width:50%;
+    margin-bottom: 10px;
+}
+
+.three_title{
+    text-align: center;
+}
+.blk-2 {
+   
     text-align:center;
 
 }
 
+
+
 .blk-2 h1{
     background-color:yellow;
+    margin-left: 10px;
+    
 }
 
 .blk-3{
@@ -193,6 +207,8 @@ th, td {
 .go{
     margin-top:10px;
 }
+
+
 
 /*.........................................footer......................*/
 
@@ -331,6 +347,6 @@ i{
 
 @media only screen and (max-width:414px) {
   .awesome {
-      font-size:10px;
+      font-size:50px;
   }
 }
