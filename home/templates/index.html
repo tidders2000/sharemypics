@@ -1,5 +1,7 @@
-{% extends 'base.html' %}
- {% block content %}
+{% extends 'base.html' %} 
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% block content %}
     <!-- hero image-->
     <div class="row">
       <div class="col-sm-12">
@@ -7,6 +9,7 @@
      <div class="centered awesome">SHARE MY PICS</div>
     </div>
     </div>
+    
     <!-- three main content blocks-->
     <div class="row whitebg">
       <div class="col-sm-12 col-md-4 col-lg-4 blk-1 d-none d-md-none d-lg-block">
@@ -20,13 +23,13 @@
       <!-- search for event with dropdown-->
       <div class="col-sm-12 col-md-6 col-lg-4 blk-2">
         <h1 class='three_title'>Find An Event</h1><br>
-        <form action="{% url 'search_results' %}" method="get">
+          <form action="{% url 'search_results' %}" method="get">
 
-          <input type="text" list="list" name="q"/>
-          <datalist id="list">
+          <input type="text" list="list1"  name="q"/>
+          <datalist id="list1">
          {% for event in events %}
-         <option  value="{{ event.event_name }}">
-           
+         <option value="{{ event.event_name }}">
+           <p>{{event.price}}</p>
          {% endfor %}
       </datalist><br>
           <input type="submit" value="Go" class="btn btn-success btn-lg go" />
@@ -34,9 +37,8 @@
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4 blk-3">
         <h1 class='three_title'>Took some great pics?</h1>
-        <p>Find out how to sell your pictures and make instant cash</p>
-      
-       
+        <p> Find out how to share them and make some money</p>
+    
       </div>
     </div>
 <script type="text/javascript" id="cookieinfo"
