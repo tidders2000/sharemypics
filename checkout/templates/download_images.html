@@ -3,19 +3,19 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<div class="col-sm-12 whitebg">
-<h1>Download Images</h1>
-<p>Click on the link then right click on the image and select Save As</p>
+<h1 class='search-title'>Download Images</h1>
+<div class="col-sm-12 col-md-8 offset-md-2 whitebg">
 
-<ul>
+<p><b>Click on the link then right click on the image and select Save As</b></p>
+
+
 
 {% for purchase in purchases%}
 
 {% if purchase.buyer.username == user.username %}
 
-<li><a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a></li>
+<p><a href="{{MEDIA_URL}}{{purchase.product.image}}">{{purchase.product.image}}</a></p>
 
-</ul>
 
  {% endif %}
 
