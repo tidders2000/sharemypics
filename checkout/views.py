@@ -78,8 +78,8 @@ def sales(request):
     for sale in sales:
         if sale.product.user == request.user:
            total=total+sale.product.price
-       
+   
         
         
     
-    return render(request,'sales.html',{'sales':sales}, {'total':total})
+    return render(request,'sales.html',{'sales':sales, 'total':total})

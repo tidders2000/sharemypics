@@ -1,25 +1,26 @@
 {% extends "base.html" %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <h1 class='search-title'>Sales</h1>
 
-
-
+<div class="row">
+  <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
     <ul>
         <table>
             {% for sale in sales %} {% if sale.product.user.username == user.username %}
             <tr>
                 <td>{{sale.product.event_name}}</td>
                 <td>{{sale.order}}</td>
-                <td>{{sale.product.price}}</td>
+                <td>&pound{{sale.product.price}}</td>
                 <td>{{sale.product.user}}</td>
             </tr>
             {% endif %} {% endfor %}
             <tr>
                 <td><b>Total</b></td>
                 <td></td>
-                <td><b>{{total}} </b></td>
+                <td><b>&pound{{ total }}</b></td>
                 <td></td>
             </tr>
         </table>
-        
+        </div>
+ </div>    
 
 {% endblock %}

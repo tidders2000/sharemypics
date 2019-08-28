@@ -17,7 +17,9 @@ body {
    
 
 }
-
+ul{
+    padding-left: 5px;
+}
 .container-fluid:{
     padding:0;
 }
