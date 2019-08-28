@@ -46,11 +46,13 @@ tr:nth-child(odd){
     
 table{
     width:100%;
+      margin-top: 20px;
 }
 
 th, td {
   text-align: center;
-  padding: 8px;
+ padding-top: 5px;
+ padding-bottom: 5px;
 }
 
 /*.........................................navigation for home page......................*/
@@ -266,6 +268,7 @@ i{
     border-color: transparent;
     padding: 10px 0px 30px 0px ;
     margin-left: 5px;
+    margin-right:5px;
     
  
     margin-top: 10px;
@@ -317,8 +320,7 @@ i{
     text-align:right;
   }
 .total{
-  background-color:grey;
-  font-size: 25px;
+color:black!important;
 }
 
 .cart_text i{
@@ -334,6 +336,7 @@ i{
     height: 50px;
     width: 100px;
 }
+
 
 
 /*.........................................checkout......................*/
