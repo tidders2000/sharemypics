@@ -265,7 +265,10 @@ i{
 .card{
     border-color: transparent;
     padding: 10px 0px 30px 0px ;
-    margin-left: 10px;
+    margin-left: 5px;
+    
+ 
+    margin-top: 10px;
 }
 
 .card-body {
