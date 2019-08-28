@@ -56,7 +56,7 @@ def add_an_image(request):
       if image.is_valid():
           img=image.save(commit=False)
           wm_image= img.image
-          var='media/watermarks/{}'.format(img.image)
+          var='media/media/watermarks/{}'.format(img.image)
           watermark_text( wm_image,var, text='www.sharemypics.com',pos=(0, 0))
           img.user=user
           img.wm_image=var

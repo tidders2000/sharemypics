@@ -4,11 +4,12 @@
 {% load bootstrap_tags %}
 {% block content %}
 
-<h1>{{user.username}}{{user.id}}</h1>
+<h1 class='search-title'>Add An Image</h1>
 
 <form  method="POST" id="add_image" action="" enctype="multipart/form-data">
- <div class="form-group col-md-6">
-     <input type="text" list="list" name="q"/>
+ <div class="form-group col-md-6 offset-md-3">
+      <label for="q">Event Name</label>
+     <input type="text" class="form-control"list="list" name="q"/>
           <datalist id="list">
          {% for event in events %}
          <option  value="{{ event.event_name }}">
@@ -16,10 +17,11 @@
          {% endfor %}
       </datalist><br>
         {{ add_image | as_bootstrap }}
-    </div>
-  {% csrf_token %}   
+          {% csrf_token %}   
 <div class="form-group col-md-12">
-        <input class=" btn btn-primary" id="submit_image_btn" name="commit" type="submit" value="submit_image">
+        <input class=" btn btn-primary" id="submit_image_btn" name="commit" type="submit" value="submit">
     </div>
+    </div>
+
 </form>
 {% endblock %}
