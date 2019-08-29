@@ -5,6 +5,8 @@
 
 <h1 class='search-title'>My Images</h1>
 <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
+<form method='POST'>
+   
 
 <table>
     {% for img in my_img %}
@@ -18,5 +20,7 @@
     </tr>
     {% endfor %}
 </table>
+  {% csrf_token %}
+</form>
 </div>
 {% endblock %}

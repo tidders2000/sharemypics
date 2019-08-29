@@ -78,8 +78,10 @@ def my_images(request):
     
     my_img=CusPic.objects.filter(user=request.user)
     if request.method=="POST":
-        id=request.GET.get('del')
-        CusPic.objects.filter(id=id).delete()
+        var=request.POST.get('del')
+       
+        CusPic.objects.filter(id=var).delete()
+        messages.error(request, 'Image deleted')
         return redirect(reverse('my_images'))
     
     return render(request,'my_images.html', {'my_img':my_img})
