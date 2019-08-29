@@ -8,24 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--bootstrap,fontawsome,lightcase(lightbox plug) and custom css-->
-  
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <link rel="stylesheet" href="{{STATIC_URL}}css/lightcase.css" type="text/css" />
+  <link rel="stylesheet" href="{{STATIC_URL}}css/lightcase.css" type="text/css" />
   <title>SHARE MY PICS</title>
-     {% block head_js %}
-    {% endblock head_js %}
+  {% block head_js %} {% endblock head_js %}
 </head>
 
 <body>
   <div class="container-fluid">
-   
+
     <!-- navigation-->
     <div class="row ">
-      <div class="col-5"> <!--shoping basket-->
+      <div class="col-5">
+        <!--shoping basket-->
         <ul class='nav'>
           <li class="nav-item">
             <a href="{% url 'view_cart' %}" class="nav-link cart_text">
@@ -37,138 +37,113 @@
           </li>
         </ul>
       </div>
-      <div class="col-7  "><!--main nav-->
+      <div class="col-7  ">
+        <!--main nav-->
 
         <ul class="nav nav2 ">
-        <!--bootsrap classes and dropdown template-->
+          <!--bootsrap classes and dropdown template-->
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'index' %}">Home</a>
               <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-            
+
               <a class="dropdown-item" href="{% url 'add_image' %}">Add Images</a>
               <a class="dropdown-item" href="{% url 'sales' %}">Sales</a>
-               <a class="dropdown-item" href="{% url 'download_images' %}">Downloads</a>
-               <a class="dropdown-item" href="{% url 'my_images' %}">My Stock</a>
+              <a class="dropdown-item" href="{% url 'download_images' %}">Downloads</a>
+              <a class="dropdown-item" href="{% url 'my_images' %}">My Stock</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-            
+
           </li>
 
         </ul>
+        </div>
       </div>
     </div>
-    </div>
-    {% block content %}{% endblock %}
-   {% if messages %}
-        <div class="alert alert-success">
-            <div class="messages">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-                {% endif%}
-   -
-    <!--footer-->
-    <div class="container-flex footer">
+    {% block content %}{% endblock %} {% if messages %}
+    <div class="alert alert-success">
+      <div class="messages">
+        {% for message in messages %} {{ message }} {% endfor %} {% endif%} -
+        <!--footer-->
+        <div class="container-flex footer">
 
-<div class="row">
-      <div class="col-12 social">
+          <div class="row">
+            <div class="col-12 social">
 
-        <!-- Facebook -->
-        <a class="fb-ic">
+              <!-- Facebook -->
+              <a class="fb-ic">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        <!-- Twitter -->
-        <a class="tw-ic">
+              <!-- Twitter -->
+              <a class="tw-ic">
             <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        <!-- Google +-->
-        <a class="gplus-ic">
+              <!-- Google +-->
+              <a class="gplus-ic">
             <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        <!--Linkedin -->
-        <a class="li-ic">
+              <!--Linkedin -->
+              <a class="li-ic">
             <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        <!--Instagram-->
-        <a class="ins-ic">
+              <!--Instagram-->
+              <a class="ins-ic">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        <!--Pinterest-->
-        <a class="pin-ic">
+              <!--Pinterest-->
+              <a class="pin-ic">
             <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
           </a>
-      </div>
-</div>
-      <div class="row">
-
-        <!--Grid column-->
-        <div class="col-10 offset-1 offset-md-0 col-sm-6 mb-4">
-
-          <!-- Form -->
-          <form class="input-group">
-            <input class="form-control form-control-sm " type="text" placeholder="Search" aria-label="Search">
-            
-             <div class="input-group-append">
-              <button class="btn btn-sm btn-secondary my-0" type="button">Search</button>
             </div>
-          </form>
-          <!-- Form -->
+          </div>
+          <div class="row">
 
-        </div>
-        <!--Grid column-->
+            <div class="col-sm-12 signup">
 
-        <!--Grid column-->
-        <div class="col-10 offset-1 offset-md-0  col-sm-6 mb-4">
+              <form class="input-group">
+                <input type="text" class=" form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
 
-          <form class="input-group">
-            <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+                <br>
+                  <button class="btn btn-sm btn-secondary signup_button" type="button">Sign up</button>
+               
+              </form>
 
-            <div class="input-group-append">
-              <button class="btn btn-sm btn-secondary my-0" type="button">Sign up</button>
+
             </div>
-          </form>
+          </div>
+          <!-- Footer Elements -->
 
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://scruffyhorse.com"> scruffyhorse.com</a>
+          </div>
+          <!-- Copyright -->
+
+
+
+          <!-- Footer -->
         </div>
-        <!--Grid column-->
 
       </div>
-      <!--Grid row-->
 
     </div>
-    <!-- Footer Elements -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://scruffyhorse.com"> scruffyhorse.com</a>
-    </div>
-    <!-- Copyright -->
 
 
 
-    <!-- Footer -->
-  </div>
-
-  </div>
-
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script type="text/javascript" src="{% static 'js/lightcase.js' %}"></script>
+
+    <script src="https://kit.fontawesome.com/6cdfe06436.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/javascript.js' %}"></script>
 
 
-  <script type="text/javascript" src="{% static 'js/lightcase.js' %}"></script>
-
-  <script src="https://kit.fontawesome.com/6cdfe06436.js"></script>
-
-  <script type="text/javascript" src="{% static 'js/javascript.js' %}"></script>
-
-  
 </body>
 
 </html>

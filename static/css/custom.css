@@ -170,6 +170,9 @@ th, td {
     
     background-color:white;
     min-height: 300px;
+    margin-right: 2px;
+    margin-left:2px;
+  
    
  
 }
@@ -242,14 +245,32 @@ i{
     color:#A9A9A9;
 }
 
-.input-group{
-    padding-left: 5px;
-    padding-right: 5px;
-}
 
 .social a{
     text-align: center;
     
+}
+
+.signup{
+    text-align: center;
+}
+
+.signup form{
+    display:inline-block;
+   margin: auto;
+   width:auto;
+}
+
+.signup_button{
+    margin-top: 20px;
+}
+
+.form-control{
+    width:100px;
+}
+
+.input-group{
+    margin-left:25%;
 }
 
 /*.........................................search results......................*/
