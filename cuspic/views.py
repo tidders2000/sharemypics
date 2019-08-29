@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -77,5 +77,9 @@ def add_an_image(request):
 def my_images(request):
     
     my_img=CusPic.objects.filter(user=request.user)
+    if request.method=="POST":
+        id=request.GET.get('del')
+        CusPic.objects.filter(id=id).delete()
+        return redirect(reverse('my_images'))
     
     return render(request,'my_images.html', {'my_img':my_img})

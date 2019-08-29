@@ -9,6 +9,7 @@
 <table>
     {% for img in my_img %}
     <tr>
+        <td><button type='submit'formmethod='POST' name='del' value='{{img.id}}' class="btn btn-primary btn-sm">Delete</button></td>
         <td>{{img.event_name}}</td>
          <td>{{img.user}}</td>
          <td>{{img.price}}</td>

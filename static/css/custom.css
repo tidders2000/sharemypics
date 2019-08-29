@@ -266,12 +266,13 @@ i{
 }
 
 .form-control{
-    width:100px;
+    width:100%;
 }
 
 .input-group{
     margin-left:25%;
 }
+
 
 /*.........................................search results......................*/
 .search-title{
