@@ -13,7 +13,7 @@ import stripe
 
 
 # Create your views here.
-
+""" a view that allows users to checkout"""
 stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
@@ -64,6 +64,9 @@ def checkout(request):
         order_form = OrderForm()
         
     return render(request, "checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+
+""" a view that allows users to view downloaded images """
+
 @login_required()   
 def download_images(request):
     user=request.user.username
@@ -71,6 +74,8 @@ def download_images(request):
     
  
     return render(request, 'download_images.html', {'purchases':purchases}, {'user':user})
+
+""" a view that allows users to view sales to date"""
 @login_required()
 def sales(request):
     sales = OrderLineItem.objects.all()

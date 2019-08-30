@@ -63,8 +63,8 @@ def add_an_image(request):
           img.wm_image=var2
           img.event_name=event
           img.save()
-          messages.error(request,var)
-          messages.error(request, "saved")
+          
+          messages.error(request, "Image Added")
     
     else:    
 
@@ -72,7 +72,8 @@ def add_an_image(request):
      
 
     return render(request, 'add_image.html', {'add_image':image, 'events':events},{'user':user})
-    
+
+""" a view that allows users to view images listed"""    
 @login_required()
 def my_images(request):
     
