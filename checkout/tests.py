@@ -29,5 +29,16 @@ class TestViews(TestCase):
   self.assertEqual(order.full_name, "mr Test")
   self.assertEqual(order.county, 'sussextest')
   
-
-   
+ def test_sales_view(self):
+ 
+        c = Client()
+        c.login(username='fred', password='secret', email='test@test.com')
+        page = self.client.get("/checkout/sales", follow=True)
+        self.assertEqual(page.status_code, 200)
+  
+ def test_download_view(self):
+ 
+        c = Client()
+        c.login(username='fred', password='secret', email='test@test.com')
+        page = self.client.get("/checkout/download_images", follow=True)
+        self.assertEqual(page.status_code, 200)
