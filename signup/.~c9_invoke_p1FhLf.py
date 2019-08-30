@@ -5,6 +5,6 @@ from django.db import models
 class signup (models.Model):
     name = models.CharField(max_length=254, default='')
     email= models.EmailField(max_length=254)
-    optout= models.BooleanField(default=False)
+    optout= models.BooleanField()
     def __str__(self):
-        return self.name
+        return self.email

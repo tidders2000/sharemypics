@@ -1,5 +1,5 @@
 {% load staticfiles %}
-
+{% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +65,7 @@
     {% block content %}{% endblock %} {% if messages %}
     <div class="alert alert-success">
       <div class="messages">
-        {% for message in messages %} {{ message }} {% endfor %} {% endif%} -
+        {% for message in messages %} {{ message }} {% endfor %} {% endif%} 
         <!--footer-->
         <div class="container-flex footer">
 
@@ -102,12 +102,12 @@
 
             <div class="col-sm-12 signup">
 
-              <form class="input-group">
-                <input type="text" class=" form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
-
+              <form class="input-group" method='post' action="{% url 'emailadd' %}">
+                
                 <br>
-                  <button class="btn btn-sm btn-secondary signup_button" type="button">Sign up</button>
-               
+                 {{ signupform | as_bootstrap }}
+                  <button class="btn btn-sm btn-secondary signup_button" type="submit">Sign up</button>
+               {% csrf_token %}
               </form>
 
 

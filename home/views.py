@@ -3,6 +3,7 @@ from cuspic.models import CusPic
 from django.contrib import messages
 from django.contrib import auth
 import os
+from signup.forms import signupform
 from django.views.generic import TemplateView, ListView
 
 # Create your views here.
@@ -10,5 +11,5 @@ from django.views.generic import TemplateView, ListView
 def index(request):
     
     events = CusPic.objects.values('event_name').distinct()
-    
-    return render(request, "index.html", {'events':events})
+    Signupform=signupform()
+    return render(request, "index.html", {'events':events,'signupform':Signupform})
