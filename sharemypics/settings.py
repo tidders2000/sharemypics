@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'home',
     'watermarker',
     'cart',
-    
+    'signup',
     'checkout',
 ]
 

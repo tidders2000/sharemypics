@@ -20,10 +20,12 @@ from cuspic import urls as urls_cuspic
 from home import urls as urls_home
 from home.views import index
 from cuspic.views import allPics
+from signup.views import signups
 from django.views import static
 from .settings import MEDIA_ROOT
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
+from signup import urls as urls_signup
 
 urlpatterns = [
     
@@ -31,6 +33,7 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^$', index, name='index'),
     url(r'^cuspic/', include(urls_cuspic)),
+     url(r'^signup/', include(urls_signup)),
     url(r'^home/', include(urls_home)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
