@@ -18,10 +18,10 @@ class Order(models.Model):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
         
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False)
-    product = models.ForeignKey(CusPic, null=False)
+    order = models.ForeignKey(Order, null=False,on_delete=models.CASCADE)
+    product = models.ForeignKey(CusPic, null=False,on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
-    buyer = models.ForeignKey(User, null=False)
+    buyer = models.ForeignKey(User, null=False,on_delete=models.CASCADE)
   
     
 

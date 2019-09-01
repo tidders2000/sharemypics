@@ -4,6 +4,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, ListView
 from django.conf import settings
+from signup.forms import signupform
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
@@ -27,7 +28,7 @@ def watermark_text(input_image_path,output_image_path,text, pos):
         
 
 def allPics(request):
-    
+        
         
         img = 'static/images/83.jpg'
         watermark_text(img,'media/watermarks/img',text='www.sharemypics.com',pos=(200, 50))
@@ -35,7 +36,7 @@ def allPics(request):
     
 """ a view that returns pictures filtered by event"""
 def SearchResultsView(request):
-    
+  
     query = request.GET.get('q')
     pics = CusPic.objects.filter(event_name__icontains=query)
     return render(request, 'search_results.html',{"pics":pics})
@@ -76,7 +77,7 @@ def add_an_image(request):
 """ a view that allows users to view images listed"""    
 @login_required()
 def my_images(request):
-    
+   
     my_img=CusPic.objects.filter(user=request.user)
     if request.method=="POST":
         var=request.POST.get('del')

@@ -99,20 +99,8 @@
             </div>
           </div>
           <div class="row">
-
-            <div class="col-sm-12 signup">
-
-              <form class="input-group" method='post' action="{% url 'emailadd' %}">
-                
-                <br>
-                 {{ signupform | as_bootstrap }}
-                  <button class="btn btn-sm btn-secondary signup_button" type="submit">Sign up</button>
-               {% csrf_token %}
-              </form>
-
-
-            </div>
-          </div>
+{% block footer %} {% endblock %}
+            
           <!-- Footer Elements -->
 
           <!-- Copyright -->

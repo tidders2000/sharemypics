@@ -1,47 +1,57 @@
-{% extends 'base.html' %} 
-{% load static from staticfiles %}
-{% load bootstrap_tags %}
-{% block content %}
-    <!-- hero image-->
-    <div class="row">
-      <div class="col-sm-12">
-      <img src="{{ STATIC_URL }}images/83.jpg" class="img-fluid hero" alt="Responsive image">
-     <div class="centered awesome">SHARE MY PICS</div>
-    </div>
-    </div>
-    
-    <!-- three main content blocks-->
-    <div class="row whitebg">
-      <div class="col-sm-12 col-md-4 col-lg-4 blk-1 d-none d-md-none d-lg-block">
-        <h1 class='three_title'>Attended an event?</h1>
-        <ol>
-          <li>Search for the event you were at</li>
-          <li>Browse fans pictures</li>
-          <li>Download a memory</li>
-        </ol>
-      </div>
-      <!-- search for event with dropdown-->
-      <div class="col-sm-12 col-md-6 col-lg-4 blk-2">
-        <h1 class='three_title'>Find An Event</h1><br>
-          <form action="{% url 'search_results' %}" method="get">
+{% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
+<!-- hero image-->
+<div class="row">
+  <div class="col-sm-12">
+    <img src="{{ STATIC_URL }}images/83.jpg" class="img-fluid hero" alt="Responsive image">
+    <div class="centered awesome">SHARE MY PICS</div>
+  </div>
+</div>
 
-          <input type="text" list="list1"  name="q"/>
-          <datalist id="list1">
+<!-- three main content blocks-->
+<div class="row whitebg">
+  <div class="col-sm-12 col-md-4 col-lg-4 blk-1 d-none d-md-none d-lg-block">
+    <h1 class='three_title'>Attended an event?</h1>
+    <ol>
+      <li>Search for the event you were at</li>
+      <li>Browse fans pictures</li>
+      <li>Download a memory</li>
+    </ol>
+  </div>
+  <!-- search for event with dropdown-->
+  <div class="col-sm-12 col-md-6 col-lg-4 blk-2">
+    <h1 class='three_title'>Find An Event</h1><br>
+    <form action="{% url 'search_results' %}" method="get">
+
+      <input type="text" list="list1" name="q" />
+      <datalist id="list1">
          {% for event in events %}
          <option value="{{ event.event_name }}">
            <p>{{event.price}}</p>
          {% endfor %}
       </datalist><br>
-          <input type="submit" value="Go" class="btn btn-success btn-lg go" />
-        </form>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-4 blk-3">
-        <h1 class='three_title'>Took some great pics?</h1>
-        <p> Find out how to share them and make some money</p>
-    
-      </div>
-    </div>
-<script type="text/javascript" id="cookieinfo"
-	src="//cookieinfoscript.com/js/cookieinfo.min.js">
+      <input type="submit" value="Go" class="btn btn-success btn-lg go" />
+    </form>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-4 blk-3">
+    <h1 class='three_title'>Took some great pics?</h1>
+    <p> Find out how to share them and make some money</p>
+
+  </div>
+</div>
+<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js">
 </script>
- {% endblock %}
+{% endblock %} {% block footer%}
+
+<div class="col-sm-12 signup">
+
+  <form class="input-group" method='post' action="{% url 'emailadd' %}">
+
+    <br> {{ signupform | as_bootstrap }}
+    <button class="btn btn-sm btn-secondary signup_button" type="submit">Sign up</button> {% csrf_token %}
+  </form>
+
+
+</div>
+</div>
+
+{% endblock %}
