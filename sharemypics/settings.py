@@ -27,7 +27,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['6465109b3d86409b9b4e69370e95589d.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['6465109b3d86409b9b4e69370e95589d.vfs.cloud9.us-east-1.amazonaws.com',
+'https://tidders2000-sharemypics.herokuapp.com/']
 
 
 # Application definition
