@@ -10,7 +10,6 @@ django-forms-bootstrap==3.1.0
 django-storages==1.7.1
 django-watermark==0.1.8
 docutils==0.15.2
-
 isort==4.3.20
 jedi==0.11.1
 jmespath==0.9.4
@@ -27,7 +26,7 @@ pylint-flask==0.5
 pylint-plugin-utils==0.5
 python-dateutil==2.8.0
 pytz==2019.2
-PyYAML==3.13
+
 requests==2.22.0
 rsa==3.4.2
 s3transfer==0.2.1
