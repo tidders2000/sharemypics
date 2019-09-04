@@ -1,4 +1,6 @@
 	jQuery(document).ready(function($) {
+	  
+	  $('.toast').toast()
 		
 $("a#single_image").fancybox();
 	

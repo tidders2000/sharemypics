@@ -5,7 +5,12 @@
 {% block content %}
 
 <h1 class='search-title'>Add An Image</h1>
-
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Load no more than ten of your best shots in jpg format</strong> Images should be of print quality. Watermarking is automatically added
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <form  method="POST" id="add_image" action="" enctype="multipart/form-data">
  <div class="form-group col-md-6 offset-md-3">
       <label for="q">Event Name</label>
