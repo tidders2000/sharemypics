@@ -14,7 +14,9 @@ from .forms import add_image_form
 from sharemypics.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME
 import boto3
 from boto3.session import Session
+client = boto3.client('s3', region_name=AWS_S3_REGION_NAME)
 
+s3_resource = boto3.resource('s3')
 """function to watermark a given image """
 
 def watermark_text(input_image_path,output_image_path,text, pos):
@@ -27,19 +29,16 @@ def watermark_text(input_image_path,output_image_path,text, pos):
         drawing.text(pos, text, fill=black, font=font_type)
         photo.show()
         photo.save(output_image_path)
-        cloudFilename = 'media/{}'.format(photo)
-        session = boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY_ID,aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
-        s3 = session.resource('s3')
-        s3.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(Key=cloudFilename, Body=photo)
+        
+        
 
-       # photo.save(output_image_path)
+  
         
 
 def allPics(request):
         
         
-        img = 'static/images/83.jpg'
-        watermark_text(img,'media/watermarks/img',text='www.sharemypics.com',pos=(200, 50))
+       
         return render(request, 'allpics.html')
     
 """ a view that returns pictures filtered by event"""
@@ -65,9 +64,10 @@ def add_an_image(request):
       if image.is_valid():
           img=image.save(commit=False)
           wm_image= img.image
-          var='media'
-          var2='https://tidders2000-sharemypics.s3.amazonaws.com/media/media/images/watermarks/{}'.format(img.image)
+          var='media/media/images/watermarks/{}'.format(img.image)
+          var2='media/images/watermarks/{}'.format(img.image)
           watermark_text( wm_image,var, text='www.sharemypics.com',pos=(0, 0))
+          client.upload_file('media/media/images/watermarks/{}'.format(img.image), AWS_STORAGE_BUCKET_NAME , 'media/media/images/watermarks/{}'.format(img.image))
           img.user=user
           img.wm_image=var2
           img.event_name=event
