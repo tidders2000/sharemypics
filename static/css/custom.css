@@ -331,7 +331,9 @@ i{
     background-color: #c67605;
 }
 
-
+.lightcase-case{
+    width:800px;
+}
 /*.........................................cart......................*/
 .input-group-addon{
     margin-left: 20px;

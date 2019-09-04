@@ -2,6 +2,9 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 <div class="container-flex">
     <h1 class='search-title'>Search Results</h1>
@@ -13,7 +16,7 @@
                 <div class="card-header">
                {{ pic.event_name }}-{{pic.user}}
                 </div>
-                <a  href="{{MEDIA_URL}}{{ pic.wm_image }}" data-rel="lightcase" class='bob'> <img src="{{MEDIA_URL}}{{ pic.wm_image }}" class="card-img-top " alt="..."/></a>
+                <a  href="{{MEDIA_URL}}{{ pic.wm_image }}" data-fancybox="images" data-width="2048" data-height="1365"> <img src="{{MEDIA_URL}}{{ pic.wm_image }}" class="card-img-top " alt="..."/></a>
                 
             
                 <p class="product-description">{{ pic.info }}</p>
