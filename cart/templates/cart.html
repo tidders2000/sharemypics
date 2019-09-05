@@ -13,7 +13,7 @@
    
   <tr>
     <th> {{item.product.event_name}}</th>
-    <th> <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="cart_image" alt="..."/></th>
+    <th> <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="cart_image" alt="{{ item.product.name }}"/></th>
     <th>{{ item.product.name }}</th> 
     <th>{{ item.product.price }}</th>
     <th> <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">

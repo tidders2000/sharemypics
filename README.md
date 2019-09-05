@@ -76,7 +76,7 @@ presentation2.pdf in gihub repo
   archving solution may be required for a later release
 
 
-
+- sign up form on index footer linked to model to store data but no current functionality to view or use data
 
 ### Features Left to Implement
 
@@ -87,8 +87,11 @@ presentation2.pdf in gihub repo
 -Add pagination to the search pages
 
 - Develop user dashboard for performance report
--
+- Add functionality for users to edit e mail sign up settings
+
 - Hide menu items that are only applicable to logged in users
+
+
 
 
 
@@ -112,6 +115,7 @@ presentation2.pdf in gihub repo
 - Unittest for automated testing
 - SQLlite3 for development database
 - GIT for version control
+- cookie script - https://cookieinfoscript.com/
 
 
 ## Testing
@@ -146,7 +150,7 @@ for dummy transactions.
 
 Used for pillow resize of images -https://stackoverflow.com/questions/273946/how-do-i-resize-an-image-using-pil-and-maintain-its-aspect-ratio
 
-
+cookies notice - https://cookieinfoscript.com/
 
 Tutorials point for general help on all subjects https://www.tutorialspoint.com/flask/flask_mail.htm
 Code Institute e commerce model which helped with this build

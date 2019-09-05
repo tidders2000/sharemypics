@@ -21,7 +21,7 @@
                 <div class="card-header">
                {{ pic.event_name }}-{{pic.user}}
                 </div>
-                <a  href="{{MEDIA_URL}}{{ pic.wm_image }}" data-fancybox="images" data-width="2048" data-height="1365"> <img src="{{MEDIA_URL}}{{ pic.wm_image }}" class="card-img-top " alt="..."/></a>
+                <a  href="{{MEDIA_URL}}{{ pic.wm_image }}" data-fancybox="images" data-width="2048" data-height="1365"> <img src="{{MEDIA_URL}}{{ pic.wm_image }}" class="card-img-top " alt="  {{ pic.event_name }}"/></a>
                 
             
                 <p class="product-description">{{ pic.info }}</p>
