@@ -38,6 +38,7 @@ def checkout(request):
                     quantity = quantity,
                     buyer = request.user
                     )
+                olid=order_line_item.id
                 order_line_item.save()
                 
             try:
@@ -48,6 +49,7 @@ def checkout(request):
                     card = payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
+                order_line_item.objects.filter(id=olid).delete()
                 messages.error(request, "Your card was declined!")
                 
             if customer.paid:
@@ -55,9 +57,11 @@ def checkout(request):
                 request.session['cart'] = {}
                 return redirect(reverse('download_images'))
             else:
+                order_line_item.objects.filter(id=olid).delete()
                 messages.error(request, "Unable to take payment")
         else:
             print(payment_form.errors)
+            order_line_item.objects.filter(id=olid).delete()
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         payment_form = MakePaymentForm()
