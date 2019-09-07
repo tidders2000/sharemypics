@@ -131,6 +131,14 @@ the watermarked pillow image to s3 with BOTO3 it did not like it. The solution i
 Another big  problem I found was the sales totals were not adding correctly. This was due to some code not working as expected and when
 the code was removed all was fine.
 
+After moving to production I discovered that there is a miniumum transaction limit for credit cards. I then adjusted the model to set
+a minimum amount of 0.35 to avoid this issue. I also found that when a payment fails the image is still coped to downloads as it
+uses the productorder table. A long term solution would be to alter design but I have added some code to delete the order if 
+transaction fails.
+
+ON doing some user testing I would add a couple of extra features. The search needs to be accessible more readily from any page.
+Also each image needs a name rather than its event name. Wheny you are reviewing sales you can not tell images apart
+
 I used Travis for integration testing and a lot of adjustments were required to I could get this working
 
 

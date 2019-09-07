@@ -229,6 +229,7 @@ th, td {
 .social {
     display: block;
      margin: auto;
+    
   width: 50%;
   text-align:center;
   padding-bottom: 50px;
@@ -242,9 +243,9 @@ hr{
     color: #A9A9A9;
 }
 
-/*.footer{
-    padding-top:50px;
-}*/
+.footer{
+    margin-top:50px;
+}
 
 i{
     color:#A9A9A9;
@@ -253,6 +254,7 @@ i{
 
 .social a{
     text-align: center;
+   
     
 }
 
