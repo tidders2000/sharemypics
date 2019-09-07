@@ -4,7 +4,10 @@
    color:black;
 }
 
-
+.help-block{
+    font-size: 1em;
+    color:grey;
+}
 
 body {
     font-family: Arial;
@@ -239,9 +242,9 @@ hr{
     color: #A9A9A9;
 }
 
-.footer{
+/*.footer{
     padding-top:50px;
-}
+}*/
 
 i{
     color:#A9A9A9;

@@ -43,7 +43,7 @@ def allPics(request):
     
 """ a view that returns pictures filtered by event"""
 def SearchResultsView(request):
-  
+    
     query = request.GET.get('q')
     pics = CusPic.objects.filter(event_name__icontains=query)
     return render(request, 'search_results.html',{"pics":pics})

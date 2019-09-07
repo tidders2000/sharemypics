@@ -2,6 +2,8 @@
 	  
 	  $('.toast').toast()
 	  $('document').toast('show')
+	  $('.has-popover').popover({'trigger':'hover'});
+
 		
 $("a#single_image").fancybox();
 	
