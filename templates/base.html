@@ -63,16 +63,17 @@
       </div>
     </div>
     
-       
+
     {% block content %}{% endblock %} 
    
   
-      
- {% if messages %}
-<div class="alert alert-warning" role="alert">
+             {% if messages %}
+<div class="alert alert-warning" id='alert' role="alert">
+  
   {% for message in messages %} {{ message }} {% endfor %} {% endif%} 
- 
-</div>
+ <span id='fade'>X</span>
+</div> 
+
 
         <!--footer not my orginal code -->
        <div class="container-flex footer"> 
