@@ -9,7 +9,7 @@ from django.views.generic import TemplateView, ListView
 # Create your views here.
 """ passes list of events in the DB to the index page """
 def index(request):
-    
+    messages.error(request, "Image Added")
     events = CusPic.objects.values('event_name').distinct()
     Signupform=signupform()
     return render(request, "index.html", {'events':events,'signupform':Signupform})
