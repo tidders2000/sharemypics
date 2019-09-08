@@ -151,7 +151,7 @@ I have not added any backway compatability for old browsers
 
 Deployed to heroku. DB moved across to Postgress.  A number of values are
 stored in env variables and these had to be changed for deployment. STRIPE test card numbers can be used
-for dummy transactions. 
+for dummy transactions. A test user hs been set up to view the application. username test and password test.
 
 
 ## Credits

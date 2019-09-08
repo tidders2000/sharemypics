@@ -2,6 +2,12 @@
 
 	  $('.toast').toast()
 	  $('document').toast('show')
+	  
+	  $('#fade').hide()
+	  
+	  $('#alert').mouseover(function(){
+	  	 $('#fade').show()
+	  })
 
 	  /*hide alert box */
 	  $('#fade').click(function() {
